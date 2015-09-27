@@ -28,10 +28,11 @@
 
             <TextView
                 android:layout_width="wrap_content"
-                android:layout_height="match_parent"
+                android:layout_height="174dp"
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:id="@+id/TeamOneDescript"
-                android:layout_weight="0.04" />
+                android:layout_weight="0.08"
+/>
 
             <Button
                 android:layout_width="wrap_content"
@@ -42,4 +43,33 @@
                 android:focusableInTouchMode="false" />
         </TableRow>
     </ScrollView>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/scrollView"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+
+        <ImageView
+            android:layout_width="186dp"
+            android:layout_height="174dp"
+            android:id="@+id/imageView2"
+            android:src="@drawable/deathgripsatbrooklynmasonictemple" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="174dp"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:id="@+id/textView"
+            android:layout_weight="0.01" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="@string/ButtonSelectScreenPick"
+            android:id="@+id/button"
+            android:layout_weight="0.00"
+            android:focusableInTouchMode="false" />
+    </TableRow>
 </RelativeLayout>

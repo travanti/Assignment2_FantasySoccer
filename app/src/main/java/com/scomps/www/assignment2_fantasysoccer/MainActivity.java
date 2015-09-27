@@ -9,6 +9,10 @@ import android.widget.TextView;
 import java.util.Hashtable;
 
 
+//DeathGripsImage by Omarurena1996 downloaded from https://en.wikipedia.org/wiki/Death_Grips#
+///media/File:Death_Grips_at_Brooklyn_Masonic_Temple,_NYC_(2015).jpg
+
+
 public class MainActivity extends ActionBarActivity {
     public static Hashtable ht = new Hashtable<String, SoccerPlayer>();
     public static final int OFFENSIVE = 1;
@@ -33,7 +37,28 @@ public class MainActivity extends ActionBarActivity {
         String team3 = "Naughty by Nature";
         String team4 = "Cypress Hill";
         String team5 = "Beastie Boys";
-
+        String[] tOne = new String[4];
+        tOne[0] = "rza";
+        tOne[1] = "gza";
+        tOne[2] = "methodman";
+        tOne[3] = "raekwon";
+        String[] tTwo = new String[3];
+        tTwo[0] = "mcride";
+        tTwo[1] = "zachHill";
+        tTwo[2] = "andyMorin";
+        String[] tThree = new String[3];
+        tThree[0] = "treach";
+        tThree[1] = "djKayGee";
+        tThree[2] = "vinRock";
+        String[] tFour = new String[4];
+        tFour[0] = "bReal";
+        tFour[1] = "djMuggs";
+        tFour[2] = "senDog";
+        tFour[3] = "ericbobo";
+        String[] tFive = new String[3];
+        tFive[0] = "adRock";
+        tFive[1] = "mikeD";
+        tFive[2] = "mca";
 
         //@todo make keys players names
         SoccerPlayer rza = new SoccerPlayer("RZA", team1, OFFENSIVE, BESTEST); //create first player and add to ht
@@ -43,7 +68,7 @@ public class MainActivity extends ActionBarActivity {
         ht.put("gza", gza);
 
         SoccerPlayer methodman = new SoccerPlayer("Method Man", team1, GOALIE, BEST);
-        ht.put("Method_Man", methodman);
+        ht.put("methodman", methodman);
 
         SoccerPlayer raekwon = new SoccerPlayer("Raekwon", team1, DEFENSEIVE, BEST);
         ht.put("raekwon", raekwon);
@@ -88,7 +113,10 @@ public class MainActivity extends ActionBarActivity {
         ht.put("mca", mca);
 
         final TextView textView1 = (TextView) findViewById(R.id.TeamOneDescript);
-        textView1.setText(ht.get("rza").toString());
+        textView1.setText(ht.get(tOne[0]).toString()+String.format("%n")+
+                          ht.get(tOne[1]).toString()+String.format("%n")+
+                          ht.get(tOne[2]).toString()+String.format("%n")+
+                          ht.get(tOne[3]).toString());
 
     }
 
