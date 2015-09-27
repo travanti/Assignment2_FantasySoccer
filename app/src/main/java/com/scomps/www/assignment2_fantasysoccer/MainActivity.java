@@ -10,7 +10,7 @@ import java.util.Hashtable;
 
 
 public class MainActivity extends ActionBarActivity {
-    public static Hashtable ht = new Hashtable<String, String>();
+    public static Hashtable ht = new Hashtable<String, SoccerPlayer>();
     public static final int OFFENSIVE = 1;
     public static final int DEFENSEIVE = 2;
     public static final int GOALIE = 3;
@@ -28,42 +28,67 @@ public class MainActivity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        String Team1 = "Wu Tang Clan";
-        String Team2 = "Death Grips";
-        String Team3 = "Naughty by Nature";
-        String Team4 = "Cypress Hill";
-        String Team5 = "Beastie Boys";
-        String Team6 = "NWA";
+        String team1 = "Wu Tang Clan";
+        String team2 = "Death Grips";
+        String team3 = "Naughty by Nature";
+        String team4 = "Cypress Hill";
+        String team5 = "Beastie Boys";
 
-        SoccerPlayer RZA = new SoccerPlayer("RZA", Team1, OFFENSIVE, 80); //create first player and add to ht
-        ht.put(RZA.toString(), RZA);
 
-        SoccerPlayer GZA = new SoccerPlayer("GZA", Team1, OFFENSIVE, 70);
-        ht.put(GZA.toString(), GZA);
+        //@todo make keys players names
+        SoccerPlayer rza = new SoccerPlayer("RZA", team1, OFFENSIVE, BESTEST); //create first player and add to ht
+        ht.put("rza", rza);
 
-        SoccerPlayer MethodMan = new SoccerPlayer("Method Man", Team1, GOALIE, 80);
-        ht.put(Team1, "Method Man");
-        ht.put(Team1, "Raekwon");
-        ht.put(Team2, "MC RIDE");
-        ht.put(Team2, "ZACH HILL");
-        ht.put(Team2, "Andy Morin");
-        ht.put(Team3, "Treach");
-        ht.put(Team3, "DJ Kay Gee");
-        ht.put(Team3, "Vin Rock");
-        ht.put(Team4, "B-Real");
-        ht.put(Team4, "DJ Muggs");
-        ht.put(Team4, "Sen Dog");
-        ht.put(Team4, "Eric Bobo");
-        ht.put(Team5, "Ad-Rock");
-        ht.put(Team5, "Mike D");
-        ht.put(Team5, "MCA");
-        ht.put(Team6, "Eazy-E");
-        ht.put(Team6, "Dr. Dre");
-        ht.put(Team6, "Ice Cube");
-        ht.put(Team6, "MC Ren");
+        SoccerPlayer gza = new SoccerPlayer("GZA", team1, OFFENSIVE, BEST);
+        ht.put("gza", gza);
+
+        SoccerPlayer methodman = new SoccerPlayer("Method Man", team1, GOALIE, BEST);
+        ht.put("Method_Man", methodman);
+
+        SoccerPlayer raekwon = new SoccerPlayer("Raekwon", team1, DEFENSEIVE, BEST);
+        ht.put("raekwon", raekwon);
+
+        SoccerPlayer mcride = new SoccerPlayer("MC RIDE", team2, OFFENSIVE, BESTEST);
+        ht.put("mcride", mcride);
+
+        SoccerPlayer zachHill = new SoccerPlayer("ZACH HILL", team2, DEFENSEIVE, BEST);
+        ht.put("zachHill", zachHill);
+
+        SoccerPlayer andyMorin = new SoccerPlayer("ANDY MORIN", team2, GOALIE, BEST);
+        ht.put("andyMorin", andyMorin);
+
+        SoccerPlayer treach = new SoccerPlayer("TREACH", team3, OFFENSIVE, GOOD);
+        ht.put("treach", treach);
+
+        SoccerPlayer djKayGee = new SoccerPlayer("DJ Kay Gee", team3, DEFENSEIVE, OKAY);
+        ht.put("djKayGee", djKayGee);
+
+        SoccerPlayer vinRock = new SoccerPlayer("Vin Rock", team3, GOALIE, GOOD);
+        ht.put("vinRock", vinRock);
+
+        SoccerPlayer bReal = new SoccerPlayer("B-Real", team4, OFFENSIVE, GOOD);
+        ht.put("bReal", bReal);
+
+        SoccerPlayer djMuggs = new SoccerPlayer("DJ Muggs", team4, DEFENSEIVE, GOOD);
+        ht.put("djMuggs", djMuggs);
+
+        SoccerPlayer senDog = new SoccerPlayer("Sen Dog", team4, GOALIE, GOOD);
+        ht.put("senDog", senDog);
+
+        SoccerPlayer ericBobo = new SoccerPlayer("Eric Bobo", team4, OFFENSIVE, GOOD);
+        ht.put("ericbobo", ericBobo);
+
+        SoccerPlayer adRock = new SoccerPlayer("Ad-Rock", team5, OFFENSIVE, OKAY);
+        ht.put("adRock", adRock);
+
+        SoccerPlayer mikeD = new SoccerPlayer("Mike D", team5, DEFENSEIVE, OKAY);
+        ht.put("mikeD", andyMorin);
+
+        SoccerPlayer mca = new SoccerPlayer("MCA", team5, GOALIE, OKAY);
+        ht.put("mca", mca);
 
         final TextView textView1 = (TextView) findViewById(R.id.TeamOneDescript);
-//        textView1.setText();
+        textView1.setText(ht.get("rza").toString());
 
     }
 

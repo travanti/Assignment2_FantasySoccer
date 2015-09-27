@@ -24,7 +24,7 @@
                 android:layout_height="174dp"
                 android:id="@+id/imageView"
                 android:layout_weight="0.04"
-                android:src="@drawable/WuTangClanonStage" />
+                android:src="@drawable/wutangclanonstage" />
 
             <TextView
                 android:layout_width="wrap_content"
