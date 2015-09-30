@@ -1,5 +1,6 @@
 package com.scomps.www.assignment2_fantasysoccer;
 
+import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -9,15 +10,11 @@ import android.widget.EditText;
 
 
 public class CustomTeam extends ActionBarActivity {
-    public static boolean call[];
-    public static boolean called = true;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_custom_team);
-        call = getIntent().getBooleanArrayExtra(MainActivity.TEAM_1);
-        called = call[0];
 
     }
 
@@ -44,11 +41,11 @@ public class CustomTeam extends ActionBarActivity {
     }
 
     public void regNewTeam(View view) {
-        String p1Name = null;
-        String p2Name = null;
-        String p3Name = null;
-        String p4Name = null;
-        String teamName = null;
+        String p1Name= "default";
+        String p2Name= "default";
+        String p3Name= "default";
+        String p4Name = "default";
+        String teamName;
         int pP1 = 0;
         int pP2 = 0;
         int pP3 = 0;
@@ -66,10 +63,10 @@ public class CustomTeam extends ActionBarActivity {
         pP2 = Integer.parseInt(p2.getText().toString()); //force it to behave, assuming int is placed
         pP3 = Integer.parseInt(p3.getText().toString()); //force it to behave, assuming int is placed
         pP4 = Integer.parseInt(p4.getText().toString()); //powers are here
-        p1Name = p1.getText().toString(); //names are here
-        p2Name = p2.getText().toString();
-        p3Name = p3.getText().toString();
-        p4Name = p4.getText().toString();
+        p1Name = n1.getText().toString(); //names are here
+        p2Name = n2.getText().toString();
+        p3Name = n3.getText().toString();
+        p4Name = n4.getText().toString();
         EditText team = (EditText) findViewById(R.id.teamNameEntry);
         teamName = team.getText().toString();
 
@@ -77,13 +74,13 @@ public class CustomTeam extends ActionBarActivity {
         SoccerPlayer mp2 = new SoccerPlayer(p2Name, teamName, MainActivity.OFFENSIVE, pP2);
         SoccerPlayer mp3 = new SoccerPlayer(p3Name, teamName, MainActivity.DEFENSEIVE, pP3);
         SoccerPlayer mp4 = new SoccerPlayer(p4Name, teamName, MainActivity.GOALIE, pP4);
-        if(called) {
+        if(MainActivity.wasCalled == 0) {
 
-            MainActivity.ht.put("mp1", mp1);
-            MainActivity.ht.put("mp2", mp2);
-            MainActivity.ht.put("mp3", mp3);
-            MainActivity.ht.put("mp4", mp4);
-            MainActivity.wasCalled = true;
+            MainActivity.ht.put(p1Name, mp1);
+            MainActivity.ht.put(p2Name, mp2);
+            MainActivity.ht.put(p3Name, mp3);
+            MainActivity.ht.put(p4Name, mp4);
+            MainActivity.wasCalled = 1;
         }
         else
         {
@@ -91,7 +88,23 @@ public class CustomTeam extends ActionBarActivity {
             MainActivity.ht.put("mp2a", mp2);
             MainActivity.ht.put("mp3a", mp3);
             MainActivity.ht.put("mp4a", mp4);
+            MainActivity.wasCalled = 2;
         }
+        Intent TET1 = new Intent(this, TeamEditTeam1.class);
+
+        String[] roster = new String[4];
+        roster[0] = p1Name;
+        roster[1] = p2Name;
+        roster[2] = p3Name;
+        roster[3] = p4Name;
+
+        TET1.putExtra(MainActivity.TEAM_1, roster); //always use TEAM_1 other class doesn't pick from it
+        TET1.putExtra(MainActivity.TEAM_2, MainActivity.tFour);
+
+        int id = 4;
+        TET1.putExtra(MainActivity.IDENTITY, id);
+        startActivity(TET1);
+
 
     }
 }

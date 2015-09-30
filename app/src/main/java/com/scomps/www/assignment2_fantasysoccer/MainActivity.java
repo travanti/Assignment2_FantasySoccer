@@ -36,19 +36,20 @@ public class MainActivity extends ActionBarActivity {
     public static final int BEST = 70;
     public static final int GOOD = 60;
     public static final int OKAY = 50;
-    public static final int AIGHT =30;
+    public static final int AIGHT = 30;
     public static final int BAD = 10;
     public static final String TEAM_1 = "Wu Tang Clan";
     public static final String TEAM_2 = "Death Grips";
     public static final String TEAM_3 = "Naughty by Nature";
     public static final String TEAM_4 = "Cypress Hill";
+    public static final String TEAM_5 = "Mystery Team";
     public static String[] tOne;
     public static String[] tTwo;
     public static String[] tThree;
     public static String[] tFour;
     public static String IDENTITY = "id";
     private static int selections = 0;
-    public static boolean wasCalled = false;
+    public static int wasCalled = 0;
 
 
     @Override
@@ -124,18 +125,18 @@ public class MainActivity extends ActionBarActivity {
                 ht.get(tOne[2]).toString() + String.format("%n") +
                 ht.get(tOne[3]).toString());
         final TextView textView2 = (TextView) findViewById(R.id.TeamTwoDescript);
-        textView2.setText(ht.get(tTwo[0]).toString()+String.format("%n")+
-                          ht.get(tTwo[1]).toString()+String.format("%n")+
-                          ht.get(tTwo[2]).toString());
+        textView2.setText(ht.get(tTwo[0]).toString() + String.format("%n") +
+                ht.get(tTwo[1]).toString() + String.format("%n") +
+                ht.get(tTwo[2]).toString());
         final TextView textView3 = (TextView) findViewById(R.id.teamThreeDescript);
         textView3.setText(ht.get(tThree[0]).toString() + String.format("%n") +
-                          ht.get(tThree[1]).toString() + String.format("%n")+
-                          ht.get(tThree[2]).toString());
+                ht.get(tThree[1]).toString() + String.format("%n") +
+                ht.get(tThree[2]).toString());
         final TextView textView4 = (TextView) findViewById(R.id.teamFourDescript);
         textView4.setText(ht.get(tFour[0]).toString() + String.format("%n") +
-                          ht.get(tFour[1]).toString() + String.format("%n") +
-                          ht.get(tFour[2]).toString() + String.format("%n") +
-                          ht.get(tFour[3].toString()));
+                ht.get(tFour[1]).toString() + String.format("%n") +
+                ht.get(tFour[2]).toString() + String.format("%n") +
+                ht.get(tFour[3].toString()));
 
 
     }
@@ -165,6 +166,8 @@ public class MainActivity extends ActionBarActivity {
     public void editTeamsActivityTeam1(View view) {
         Intent startEditTeamActivity = new Intent(this, TeamEditTeam1.class);
         startEditTeamActivity.putExtra(TEAM_1, tOne); //always use TEAM_1 other class doesn't pick from it
+        startEditTeamActivity.putExtra(TEAM_2, tFour);
+
         int id = 4;
         startEditTeamActivity.putExtra(IDENTITY, id);
 
@@ -172,10 +175,11 @@ public class MainActivity extends ActionBarActivity {
     }
 
 
-
     public void editTeamsActivityTeam3(View view) {
         Intent startEditTeamActivity = new Intent(this, TeamEditTeam1.class);
         startEditTeamActivity.putExtra(TEAM_1, tThree); //always use TEAM_1 other class doesn't pick from it
+        startEditTeamActivity.putExtra(TEAM_2, tFour);
+
         int id = 3;
         startEditTeamActivity.putExtra(IDENTITY, id);
 
@@ -184,7 +188,9 @@ public class MainActivity extends ActionBarActivity {
 
     public void editTeamsActivityTeam4(View view) {
         Intent startEditTeamActivity = new Intent(this, TeamEditTeam1.class);
-        startEditTeamActivity.putExtra(TEAM_1, tFour);  //always use TEAM_1 other class doesn't pick from it
+        startEditTeamActivity.putExtra(TEAM_1, tFour);//always use TEAM_1 other class doesn't pick from it
+        startEditTeamActivity.putExtra(TEAM_2, tFour);
+
         int id = 4;
         startEditTeamActivity.putExtra(IDENTITY, id);
 
@@ -195,6 +201,7 @@ public class MainActivity extends ActionBarActivity {
 
         Intent startEditTeamActivity = new Intent(this, TeamEditTeam1.class);
         startEditTeamActivity.putExtra(TEAM_1, tTwo); //always use TEAM_1 other class doesn't pick from it
+        startEditTeamActivity.putExtra(TEAM_2, tFour);
 
         int id = 3;
         startEditTeamActivity.putExtra(IDENTITY, id);
@@ -203,21 +210,21 @@ public class MainActivity extends ActionBarActivity {
 
     }
 
-    private Intent addTeamInfo(String[] rost, int id)
-    {
-        Intent startEditTeam = new Intent(this, TeamEditTeam1.class);
-        startEditTeam.putExtra(TEAM_1, rost);
-        startEditTeam.putExtra(IDENTITY, id);
-
-
-
-
-        return startEditTeam;
-    }
-
+//    private Intent addTeamInfo(String[] rost, int id)
+//    {
+//        Intent startEditTeam = new Intent(this, TeamEditTeam1.class);
+//        startEditTeam.putExtra(TEAM_1, rost);
+//
+//        startEditTeam.putExtra(IDENTITY, id);
+//
+//
+//
+//
+//        return startEditTeam;
+//    }
+//
     public void spinOffToNewTeam(View view) {
         Intent startCustomTeam = new Intent(this, CustomTeam.class);
-        startCustomTeam.putExtra(TEAM_1, wasCalled);
         startActivity(startCustomTeam);
     }
 }

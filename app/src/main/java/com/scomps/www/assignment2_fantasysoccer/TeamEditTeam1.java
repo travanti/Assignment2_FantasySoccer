@@ -14,19 +14,30 @@ public class TeamEditTeam1 extends ActionBarActivity {
         super.onCreate(savedInstanceState);
 
         String[] team = getIntent().getStringArrayExtra(MainActivity.TEAM_1);
+        String[] team2 = getIntent().getStringArrayExtra(MainActivity.TEAM_2);
 
         setContentView(R.layout.team_edit_team1);
         TextView descript = (TextView) findViewById(R.id.playerOneDescript);
         TextView descript2 = (TextView) findViewById(R.id.playerTwoDescript);
         TextView descript3 = (TextView) findViewById(R.id.playerThreeDescript);
-        String identity = MainActivity.IDENTITY;
+        TextView descript5 = (TextView) findViewById(R.id.playerFiveDescript);
+        TextView descript6 = (TextView) findViewById(R.id.playerSixDescript);
+        TextView descript7 = (TextView) findViewById(R.id.playerSevenDescript);
+        TextView descript8 = (TextView) findViewById(R.id.playerEightDescript);
 
+        String identity = MainActivity.IDENTITY;
         int j = 0;
         j = getIntent().getIntExtra(MainActivity.IDENTITY, j);
+        if(MainActivity.wasCalled == 1)
+        {
+
+        }
+
+
 
         if(j > 3) {
             TextView descript4 = (TextView) findViewById(R.id.playerFourDescript);
-            descript4.setText(MainActivity.ht.get(team[3]).toString() + ".");
+            descript4.setText(MainActivity.ht.get(team2[3]).toString() + ".");
         }
 
 
@@ -34,6 +45,10 @@ public class TeamEditTeam1 extends ActionBarActivity {
         descript.setText(MainActivity.ht.get(team[0]).toString()+".");
         descript2.setText(MainActivity.ht.get(team[1]).toString()+"."); //do convoluted bullsh!t to get my sh!t
         descript3.setText(MainActivity.ht.get(team[2]).toString()+".");
+        descript8.setText(MainActivity.ht.get(team2[0]).toString()+".");
+        descript5.setText(MainActivity.ht.get(team2[1]).toString()+".");
+        descript6.setText(MainActivity.ht.get(team2[2]).toString()+".");
+        descript7.setText(MainActivity.ht.get(team2[3]).toString()+".");
 //        final TextView textView1 = (TextView) findViewById(R.id.TeamOneDescript);
 //        textView1.setText(ht.get(tOne[0]).toString() + String.format("%n") +
 //                ht.get(tOne[1]).toString() + String.format("%n") +

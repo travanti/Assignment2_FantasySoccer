@@ -185,7 +185,7 @@
         android:layout_width="150dp"
         android:layout_height="150dp"
         android:text="@string/missingPlayerMsg"
-        android:id="@+id/playerNineDescript"
+        android:id="@+id/playerSixDescript"
         android:textIsSelectable="false"
         android:layout_alignBottom="@+id/imageView"
         android:layout_alignRight="@+id/imageView"
