@@ -22,6 +22,10 @@ import java.util.Hashtable;
 // File:Adam Yauch 2.jpg and File:Michael Diamond 1.jpg. Licensed under CC BY-SA 3.0 via Commons -
 // https://commons.wikimedia.org/wiki/File:Beastie_Boys_Compo.jpg#/media/File:Beastie_Boys_Compo.jpg
 
+//credit for illuminati founder image:
+//"Adam Weishaupt01". Licensed under Public Domain via Commons -
+// https://commons.wikimedia.org/wiki/File:Adam_Weishaupt01.jpg#/media/File:Adam_Weishaupt01.jpg
+
 
 public class MainActivity extends ActionBarActivity {
     public static Hashtable ht = new Hashtable<String, SoccerPlayer>();
@@ -43,6 +47,8 @@ public class MainActivity extends ActionBarActivity {
     public static String[] tThree;
     public static String[] tFour;
     public static String IDENTITY = "id";
+    private static int selections = 0;
+    public static boolean wasCalled = false;
 
 
     @Override
@@ -158,7 +164,7 @@ public class MainActivity extends ActionBarActivity {
 
     public void editTeamsActivityTeam1(View view) {
         Intent startEditTeamActivity = new Intent(this, TeamEditTeam1.class);
-        startEditTeamActivity.putExtra(TEAM_1, tOne);
+        startEditTeamActivity.putExtra(TEAM_1, tOne); //always use TEAM_1 other class doesn't pick from it
         int id = 4;
         startEditTeamActivity.putExtra(IDENTITY, id);
 
@@ -169,7 +175,7 @@ public class MainActivity extends ActionBarActivity {
 
     public void editTeamsActivityTeam3(View view) {
         Intent startEditTeamActivity = new Intent(this, TeamEditTeam1.class);
-        startEditTeamActivity.putExtra(TEAM_1, tThree);
+        startEditTeamActivity.putExtra(TEAM_1, tThree); //always use TEAM_1 other class doesn't pick from it
         int id = 3;
         startEditTeamActivity.putExtra(IDENTITY, id);
 
@@ -178,7 +184,7 @@ public class MainActivity extends ActionBarActivity {
 
     public void editTeamsActivityTeam4(View view) {
         Intent startEditTeamActivity = new Intent(this, TeamEditTeam1.class);
-        startEditTeamActivity.putExtra(TEAM_1, tFour);
+        startEditTeamActivity.putExtra(TEAM_1, tFour);  //always use TEAM_1 other class doesn't pick from it
         int id = 4;
         startEditTeamActivity.putExtra(IDENTITY, id);
 
@@ -188,12 +194,30 @@ public class MainActivity extends ActionBarActivity {
     public void editTeamsActivityTeam2(View view) {
 
         Intent startEditTeamActivity = new Intent(this, TeamEditTeam1.class);
-        startEditTeamActivity.putExtra(TEAM_1, tTwo);
+        startEditTeamActivity.putExtra(TEAM_1, tTwo); //always use TEAM_1 other class doesn't pick from it
 
         int id = 3;
         startEditTeamActivity.putExtra(IDENTITY, id);
 
         startActivity(startEditTeamActivity);
 
+    }
+
+    private Intent addTeamInfo(String[] rost, int id)
+    {
+        Intent startEditTeam = new Intent(this, TeamEditTeam1.class);
+        startEditTeam.putExtra(TEAM_1, rost);
+        startEditTeam.putExtra(IDENTITY, id);
+
+
+
+
+        return startEditTeam;
+    }
+
+    public void spinOffToNewTeam(View view) {
+        Intent startCustomTeam = new Intent(this, CustomTeam.class);
+        startCustomTeam.putExtra(TEAM_1, wasCalled);
+        startActivity(startCustomTeam);
     }
 }

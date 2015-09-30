@@ -16,4 +16,10 @@
     <string name="title_activity_team_edit">TeamEdit</string>
     <string name="Select">Select</string>
     <string name="missingPlayerMsg">No Player Present</string>
+    <string name="title_activity_custom_team">CustomTeam</string>
+    <string name="SquadMsg">Make Your Own Squad!!!</string>
+    <string name="PowerMsg">Power</string>
+    <string name="p4SetMsg">Player Four Name</string>
+    <string name="makeTeamMsg">MakeTeam</string>
+    <string name="newTeamMsg">Create New Team</string>
 </resources>

@@ -106,48 +106,89 @@
     </LinearLayout>
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
         android:text="@string/missingPlayerMsg"
         android:id="@+id/playerOneDescript"
-        android:textSize="18sp"
         android:textIsSelectable="false"
-        android:layout_marginTop="144dp"
+        android:layout_marginTop="75dp"
         android:layout_below="@+id/linearLayout"
-        android:layout_alignRight="@+id/playerTwoDescript"
-        android:layout_alignEnd="@+id/playerTwoDescript" />
+        android:layout_alignLeft="@+id/textView"
+        android:layout_alignStart="@+id/textView"
+        android:layout_marginLeft="71dp"
+        android:layout_marginStart="71dp" />
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
         android:text="@string/missingPlayerMsg"
         android:id="@+id/playerTwoDescript"
         android:layout_column="0"
-        android:layout_marginTop="135dp"
-        android:layout_below="@+id/playerFourDescript"
-        android:layout_toRightOf="@+id/playerThreeDescript"
-        android:layout_toEndOf="@+id/playerThreeDescript" />
+        android:layout_alignBaseline="@+id/playerThreeDescript"
+        android:layout_alignBottom="@+id/playerThreeDescript"
+        android:layout_alignLeft="@+id/playerOneDescript"
+        android:layout_alignStart="@+id/playerOneDescript" />
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
         android:text="@string/missingPlayerMsg"
         android:id="@+id/playerFourDescript"
         android:layout_column="0"
-        android:layout_marginTop="77dp"
-        android:layout_below="@+id/playerOneDescript"
+        android:layout_alignTop="@+id/playerOneDescript"
         android:layout_toLeftOf="@+id/textView"
         android:layout_toStartOf="@+id/textView" />
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
         android:text="@string/missingPlayerMsg"
         android:id="@+id/playerThreeDescript"
         android:layout_column="0"
-        android:layout_below="@+id/playerTwoDescript"
-        android:layout_alignLeft="@+id/playerFourDescript"
-        android:layout_alignStart="@+id/playerFourDescript"
-        android:layout_marginTop="64dp" />
+        android:layout_alignParentBottom="true"
+        android:layout_toLeftOf="@+id/playerOneDescript"
+        android:layout_toStartOf="@+id/playerOneDescript" />
+
+    <TextView
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:text="@string/missingPlayerMsg"
+        android:id="@+id/playerFiveDescript"
+        android:textIsSelectable="false"
+        android:layout_alignTop="@+id/playerOneDescript"
+        android:layout_alignRight="@+id/linearLayout"
+        android:layout_alignEnd="@+id/linearLayout"
+        android:layout_marginRight="68dp"
+        android:layout_marginEnd="68dp" />
+
+    <TextView
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:text="@string/missingPlayerMsg"
+        android:id="@+id/playerSevenDescript"
+        android:textIsSelectable="false"
+        android:layout_alignBottom="@+id/imageView"
+        android:layout_alignLeft="@+id/playerFiveDescript"
+        android:layout_alignStart="@+id/playerFiveDescript" />
+
+    <TextView
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:text="@string/missingPlayerMsg"
+        android:id="@+id/playerEightDescript"
+        android:textIsSelectable="false"
+        android:layout_alignTop="@+id/playerFiveDescript"
+        android:layout_toRightOf="@+id/linearLayout"
+        android:layout_toEndOf="@+id/linearLayout" />
+
+    <TextView
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:text="@string/missingPlayerMsg"
+        android:id="@+id/playerNineDescript"
+        android:textIsSelectable="false"
+        android:layout_alignBottom="@+id/imageView"
+        android:layout_alignRight="@+id/imageView"
+        android:layout_alignEnd="@+id/imageView" />
 
 </RelativeLayout>

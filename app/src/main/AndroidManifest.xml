@@ -24,7 +24,11 @@
         <activity
             android:name=".TeamEditTeam1"
             android:label="@string/title_activity_team_edit"
-            android:parentActivityName=".MainActivity">
+            android:parentActivityName=".MainActivity" >
+        </activity>
+        <activity
+            android:name=".CustomTeam"
+            android:label="@string/title_activity_custom_team" >
         </activity>
     </application>
 
