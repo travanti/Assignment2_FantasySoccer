@@ -1,0 +1,153 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    tools:context="com.scomps.www.assignment2_fantasysoccer.TeamEditTeam1">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="The Team You Have Selected Is:"
+        android:id="@+id/textView"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:textSize="36sp" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageView"
+        android:layout_below="@+id/linearLayout"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="false"
+        android:src="@drawable/soccerfield"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="false"
+        android:layout_alignRight="@+id/textView"
+        android:layout_alignEnd="@+id/textView"
+        android:id="@+id/linearLayout">
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/linearLayout"
+            android:layout_alignRight="@+id/linearLayout"
+            android:layout_alignEnd="@+id/linearLayout">
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/TableRowOne"><![CDATA[
+
+                Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/Select"
+                    android:id="@+id/button"
+                    android:layout_column="29" />
+            ]]></TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/TableRowTwo"><![CDATA[
+
+                Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/Select"
+                    android:id="@+id/button2"
+                    android:layout_column="29" />
+            ]]></TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/TableRowThree"><![CDATA[
+
+                Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/Select"
+                    android:id="@+id/button3"
+                    android:layout_column="29" />
+            ]]></TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:id="@+id/TableRowFour"><![CDATA[
+
+
+
+                Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/Select"
+                    android:id="@+id/button4"
+                    android:layout_column="29" />
+
+            ]]></TableRow>
+
+        </TableLayout>
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/missingPlayerMsg"
+        android:id="@+id/playerOneDescript"
+        android:textSize="18sp"
+        android:textIsSelectable="false"
+        android:layout_marginTop="144dp"
+        android:layout_below="@+id/linearLayout"
+        android:layout_alignRight="@+id/playerTwoDescript"
+        android:layout_alignEnd="@+id/playerTwoDescript" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/missingPlayerMsg"
+        android:id="@+id/playerTwoDescript"
+        android:layout_column="0"
+        android:layout_marginTop="135dp"
+        android:layout_below="@+id/playerFourDescript"
+        android:layout_toRightOf="@+id/playerThreeDescript"
+        android:layout_toEndOf="@+id/playerThreeDescript" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/missingPlayerMsg"
+        android:id="@+id/playerFourDescript"
+        android:layout_column="0"
+        android:layout_marginTop="77dp"
+        android:layout_below="@+id/playerOneDescript"
+        android:layout_toLeftOf="@+id/textView"
+        android:layout_toStartOf="@+id/textView" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/missingPlayerMsg"
+        android:id="@+id/playerThreeDescript"
+        android:layout_column="0"
+        android:layout_below="@+id/playerTwoDescript"
+        android:layout_alignLeft="@+id/playerFourDescript"
+        android:layout_alignStart="@+id/playerFourDescript"
+        android:layout_marginTop="64dp" />
+
+</RelativeLayout>

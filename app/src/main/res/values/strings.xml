@@ -4,4 +4,16 @@
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
     <string name="ButtonSelectScreenPick">Select</string>
+    <string name="teamTwoLogo">teamTwoLogo</string>
+    <string name="teamOneLogo">team1Logo</string>
+    <string name="teamThreeLogo">teamThreeLogo</string>
+    <string name="teamFourLogo">teamFourLogo</string>
+    <string name="teamFiveLogo">teamFiveLogo</string>
+    <string name="title_activity_launcher">LauncherActivity</string>
+    <string name="ApplicationTitle">Welcome to the Hip Hop Soccer Simulator!!!</string>
+    <string name="applicationSubTitle">Ever Wondered how Hip Hop Stars Would Face Off on The Soccer Green?</string>
+    <string name="btnLauncherMsg">START</string>
+    <string name="title_activity_team_edit">TeamEdit</string>
+    <string name="Select">Select</string>
+    <string name="missingPlayerMsg">No Player Present</string>
 </resources>

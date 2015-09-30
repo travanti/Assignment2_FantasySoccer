@@ -1,9 +1,11 @@
 package com.scomps.www.assignment2_fantasysoccer;
 
+import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.TextView;
 
 import java.util.Hashtable;
@@ -11,6 +13,14 @@ import java.util.Hashtable;
 
 //DeathGripsImage by Omarurena1996 downloaded from https://en.wikipedia.org/wiki/Death_Grips#
 ///media/File:Death_Grips_at_Brooklyn_Masonic_Temple,_NYC_(2015).jpg
+
+//cypresshillcrop.jpg by Philgarlic downloaded from https://en.wikipedia.org/wiki/Cypress_Hill#
+// /media/File:Cypress_Hill_crop.jpg
+
+//credit for Beastie Boys Image:
+//"Beastie Boys Compo" by WikiLaurent - Composition based on File:Adam Horovitz.jpg,
+// File:Adam Yauch 2.jpg and File:Michael Diamond 1.jpg. Licensed under CC BY-SA 3.0 via Commons -
+// https://commons.wikimedia.org/wiki/File:Beastie_Boys_Compo.jpg#/media/File:Beastie_Boys_Compo.jpg
 
 
 public class MainActivity extends ActionBarActivity {
@@ -24,99 +34,103 @@ public class MainActivity extends ActionBarActivity {
     public static final int OKAY = 50;
     public static final int AIGHT =30;
     public static final int BAD = 10;
+    public static final String TEAM_1 = "Wu Tang Clan";
+    public static final String TEAM_2 = "Death Grips";
+    public static final String TEAM_3 = "Naughty by Nature";
+    public static final String TEAM_4 = "Cypress Hill";
+    public static String[] tOne;
+    public static String[] tTwo;
+    public static String[] tThree;
+    public static String[] tFour;
+    public static String IDENTITY = "id";
 
 
     @Override
-    //@todo Make hashtable set up properly with new soccerplayer object w/ unitque keys
     //@todo Make text display based off of information from hash table
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        String team1 = "Wu Tang Clan";
-        String team2 = "Death Grips";
-        String team3 = "Naughty by Nature";
-        String team4 = "Cypress Hill";
-        String team5 = "Beastie Boys";
-        String[] tOne = new String[4];
+        tOne = new String[4];
         tOne[0] = "rza";
         tOne[1] = "gza";
         tOne[2] = "methodman";
         tOne[3] = "raekwon";
-        String[] tTwo = new String[3];
+        tTwo = new String[3];
         tTwo[0] = "mcride";
         tTwo[1] = "zachHill";
         tTwo[2] = "andyMorin";
-        String[] tThree = new String[3];
+        tThree = new String[3];
         tThree[0] = "treach";
         tThree[1] = "djKayGee";
         tThree[2] = "vinRock";
-        String[] tFour = new String[4];
+        tFour = new String[4];
         tFour[0] = "bReal";
         tFour[1] = "djMuggs";
         tFour[2] = "senDog";
         tFour[3] = "ericbobo";
-        String[] tFive = new String[3];
-        tFive[0] = "adRock";
-        tFive[1] = "mikeD";
-        tFive[2] = "mca";
 
-        //@todo make keys players names
-        SoccerPlayer rza = new SoccerPlayer("RZA", team1, OFFENSIVE, BESTEST); //create first player and add to ht
+        SoccerPlayer rza = new SoccerPlayer("RZA", TEAM_1, OFFENSIVE, BESTEST); //create first player and add to ht
         ht.put("rza", rza);
 
-        SoccerPlayer gza = new SoccerPlayer("GZA", team1, OFFENSIVE, BEST);
+        SoccerPlayer gza = new SoccerPlayer("GZA", TEAM_1, OFFENSIVE, BEST);
         ht.put("gza", gza);
 
-        SoccerPlayer methodman = new SoccerPlayer("Method Man", team1, GOALIE, BEST);
+        SoccerPlayer methodman = new SoccerPlayer("Method Man", TEAM_1, GOALIE, BEST);
         ht.put("methodman", methodman);
 
-        SoccerPlayer raekwon = new SoccerPlayer("Raekwon", team1, DEFENSEIVE, BEST);
+        SoccerPlayer raekwon = new SoccerPlayer("Raekwon", TEAM_1, DEFENSEIVE, BEST);
         ht.put("raekwon", raekwon);
 
-        SoccerPlayer mcride = new SoccerPlayer("MC RIDE", team2, OFFENSIVE, BESTEST);
+        SoccerPlayer mcride = new SoccerPlayer("MC RIDE", TEAM_2, OFFENSIVE, BESTEST);
         ht.put("mcride", mcride);
 
-        SoccerPlayer zachHill = new SoccerPlayer("ZACH HILL", team2, DEFENSEIVE, BEST);
+        SoccerPlayer zachHill = new SoccerPlayer("ZACH HILL", TEAM_2, DEFENSEIVE, BEST);
         ht.put("zachHill", zachHill);
 
-        SoccerPlayer andyMorin = new SoccerPlayer("ANDY MORIN", team2, GOALIE, BEST);
+        SoccerPlayer andyMorin = new SoccerPlayer("ANDY MORIN", TEAM_2, GOALIE, BEST);
         ht.put("andyMorin", andyMorin);
 
-        SoccerPlayer treach = new SoccerPlayer("TREACH", team3, OFFENSIVE, GOOD);
+        SoccerPlayer treach = new SoccerPlayer("TREACH", TEAM_3, OFFENSIVE, GOOD);
         ht.put("treach", treach);
 
-        SoccerPlayer djKayGee = new SoccerPlayer("DJ Kay Gee", team3, DEFENSEIVE, OKAY);
+        SoccerPlayer djKayGee = new SoccerPlayer("DJ Kay Gee", TEAM_3, DEFENSEIVE, OKAY);
         ht.put("djKayGee", djKayGee);
 
-        SoccerPlayer vinRock = new SoccerPlayer("Vin Rock", team3, GOALIE, GOOD);
+        SoccerPlayer vinRock = new SoccerPlayer("Vin Rock", TEAM_3, GOALIE, GOOD);
         ht.put("vinRock", vinRock);
 
-        SoccerPlayer bReal = new SoccerPlayer("B-Real", team4, OFFENSIVE, GOOD);
+        SoccerPlayer bReal = new SoccerPlayer("B-Real", TEAM_4, OFFENSIVE, GOOD);
         ht.put("bReal", bReal);
 
-        SoccerPlayer djMuggs = new SoccerPlayer("DJ Muggs", team4, DEFENSEIVE, GOOD);
+        SoccerPlayer djMuggs = new SoccerPlayer("DJ Muggs", TEAM_4, DEFENSEIVE, GOOD);
         ht.put("djMuggs", djMuggs);
 
-        SoccerPlayer senDog = new SoccerPlayer("Sen Dog", team4, GOALIE, GOOD);
+        SoccerPlayer senDog = new SoccerPlayer("Sen Dog", TEAM_4, GOALIE, GOOD);
         ht.put("senDog", senDog);
 
-        SoccerPlayer ericBobo = new SoccerPlayer("Eric Bobo", team4, OFFENSIVE, GOOD);
+        SoccerPlayer ericBobo = new SoccerPlayer("Eric Bobo", TEAM_4, OFFENSIVE, GOOD);
         ht.put("ericbobo", ericBobo);
 
-        SoccerPlayer adRock = new SoccerPlayer("Ad-Rock", team5, OFFENSIVE, OKAY);
-        ht.put("adRock", adRock);
-
-        SoccerPlayer mikeD = new SoccerPlayer("Mike D", team5, DEFENSEIVE, OKAY);
-        ht.put("mikeD", andyMorin);
-
-        SoccerPlayer mca = new SoccerPlayer("MCA", team5, GOALIE, OKAY);
-        ht.put("mca", mca);
 
         final TextView textView1 = (TextView) findViewById(R.id.TeamOneDescript);
-        textView1.setText(ht.get(tOne[0]).toString()+String.format("%n")+
-                          ht.get(tOne[1]).toString()+String.format("%n")+
-                          ht.get(tOne[2]).toString()+String.format("%n")+
-                          ht.get(tOne[3]).toString());
+        textView1.setText(ht.get(tOne[0]).toString() + String.format("%n") +
+                ht.get(tOne[1]).toString() + String.format("%n") +
+                ht.get(tOne[2]).toString() + String.format("%n") +
+                ht.get(tOne[3]).toString());
+        final TextView textView2 = (TextView) findViewById(R.id.TeamTwoDescript);
+        textView2.setText(ht.get(tTwo[0]).toString()+String.format("%n")+
+                          ht.get(tTwo[1]).toString()+String.format("%n")+
+                          ht.get(tTwo[2]).toString());
+        final TextView textView3 = (TextView) findViewById(R.id.teamThreeDescript);
+        textView3.setText(ht.get(tThree[0]).toString() + String.format("%n") +
+                          ht.get(tThree[1]).toString() + String.format("%n")+
+                          ht.get(tThree[2]).toString());
+        final TextView textView4 = (TextView) findViewById(R.id.teamFourDescript);
+        textView4.setText(ht.get(tFour[0]).toString() + String.format("%n") +
+                          ht.get(tFour[1]).toString() + String.format("%n") +
+                          ht.get(tFour[2]).toString() + String.format("%n") +
+                          ht.get(tFour[3].toString()));
+
 
     }
 
@@ -140,5 +154,46 @@ public class MainActivity extends ActionBarActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    public void editTeamsActivityTeam1(View view) {
+        Intent startEditTeamActivity = new Intent(this, TeamEditTeam1.class);
+        startEditTeamActivity.putExtra(TEAM_1, tOne);
+        int id = 4;
+        startEditTeamActivity.putExtra(IDENTITY, id);
+
+        startActivity(startEditTeamActivity);
+    }
+
+
+
+    public void editTeamsActivityTeam3(View view) {
+        Intent startEditTeamActivity = new Intent(this, TeamEditTeam1.class);
+        startEditTeamActivity.putExtra(TEAM_1, tThree);
+        int id = 3;
+        startEditTeamActivity.putExtra(IDENTITY, id);
+
+        startActivity(startEditTeamActivity);
+    }
+
+    public void editTeamsActivityTeam4(View view) {
+        Intent startEditTeamActivity = new Intent(this, TeamEditTeam1.class);
+        startEditTeamActivity.putExtra(TEAM_1, tFour);
+        int id = 4;
+        startEditTeamActivity.putExtra(IDENTITY, id);
+
+        startActivity(startEditTeamActivity);
+    }
+
+    public void editTeamsActivityTeam2(View view) {
+
+        Intent startEditTeamActivity = new Intent(this, TeamEditTeam1.class);
+        startEditTeamActivity.putExtra(TEAM_1, tTwo);
+
+        int id = 3;
+        startEditTeamActivity.putExtra(IDENTITY, id);
+
+        startActivity(startEditTeamActivity);
+
     }
 }

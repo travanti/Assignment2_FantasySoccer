@@ -3,73 +3,171 @@
     android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    android:paddingBottom="@dimen/activity_vertical_margin" tools:context=".MainActivity">
+    android:paddingBottom="@dimen/activity_vertical_margin" tools:context=".MainActivity"
+    android:id="@+id/mainLayout">
 
     <ScrollView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
         android:id="@+id/scrollView"
-        android:layout_alignParentLeft="true"
+        android:layout_alignParentLeft="false"
         android:layout_alignParentStart="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true">
+        android:layout_alignParentRight="false"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentTop="false"
+        android:layout_alignParentBottom="false">
 
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:weightSum="1">
 
-            <ImageView
-                android:layout_width="186dp"
-                android:layout_height="174dp"
-                android:id="@+id/imageView"
-                android:layout_weight="0.04"
-                android:src="@drawable/wutangclanonstage" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="174dp"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:id="@+id/TeamOneDescript"
-                android:layout_weight="0.08"
-/>
-
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:text="@string/ButtonSelectScreenPick"
-                android:id="@+id/SelectTeamOne"
-                android:layout_weight="0.04"
-                android:focusableInTouchMode="false" />
-        </TableRow>
-    </ScrollView>
-
-    <TableRow
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/scrollView"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true">
+        android:weightSum="1"
+        android:id="@+id/subLayout">
 
         <ImageView
             android:layout_width="186dp"
             android:layout_height="174dp"
-            android:id="@+id/imageView2"
-            android:src="@drawable/deathgripsatbrooklynmasonictemple" />
+            android:id="@+id/teamOnePic"
+            android:src="@drawable/wutangclanonstage"
+            android:contentDescription="@string/teamOneLogo"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="0dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="0dp" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="174dp"
             android:textAppearance="?android:attr/textAppearanceMedium"
-            android:id="@+id/textView"
-            android:layout_weight="0.01" />
+            android:id="@+id/TeamOneDescript"
+            android:layout_alignParentTop="true"
+            android:layout_toRightOf="@+id/teamOnePic"
+            android:layout_toLeftOf="@+id/SelectTeamOne"
+            android:layout_toStartOf="@+id/SelectTeamOne" />
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:text="@string/ButtonSelectScreenPick"
-            android:id="@+id/button"
-            android:layout_weight="0.00"
-            android:focusableInTouchMode="false" />
-    </TableRow>
+            android:id="@+id/SelectTeamOne"
+            android:focusableInTouchMode="false"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignBottom="@+id/TeamOneDescript"
+            android:onClick="editTeamsActivityTeam1"/>
+
+
+
+
+        <ImageView
+            android:layout_width="186dp"
+            android:layout_height="174dp"
+            android:id="@+id/teamThreePic"
+            android:src="@drawable/naughtybynature"
+            android:contentDescription="@string/teamTwoLogo"
+            android:layout_below="@+id/teamTwoPic"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="174dp"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:id="@+id/TeamTwoDescript"
+            android:layout_toLeftOf="@+id/SelectTeamTwo"
+            android:layout_alignTop="@+id/teamTwoPic"
+            android:layout_toRightOf="@+id/teamTwoPic"
+            android:layout_toEndOf="@+id/teamTwoPic" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="174dp"
+            android:text="@string/ButtonSelectScreenPick"
+            android:id="@+id/SelectTeamTwo"
+            android:focusableInTouchMode="false"
+            android:layout_alignTop="@+id/TeamTwoDescript"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:onClick="editTeamsActivityTeam2"/>
+
+        <ImageView
+            android:layout_width="186dp"
+            android:layout_height="174dp"
+            android:id="@+id/teamTwoPic"
+            android:layout_alignWithParentIfMissing="false"
+            android:src="@drawable/deathgripsatbrooklynmasonictemple"
+            android:contentDescription="@string/teamThreeLogo"
+            android:layout_below="@+id/teamOnePic"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="174dp"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:id="@+id/teamThreeDescript"
+            android:layout_below="@+id/TeamTwoDescript"
+            android:layout_toRightOf="@+id/teamThreePic"
+            android:layout_toLeftOf="@+id/teamThreeSlect"
+            android:layout_toStartOf="@+id/teamThreeSlect" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="174dp"
+            android:text="@string/ButtonSelectScreenPick"
+            android:id="@+id/teamThreeSlect"
+            android:focusableInTouchMode="false"
+            android:layout_below="@+id/SelectTeamTwo"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:onClick="editTeamsActivityTeam3"
+            />
+
+        <ImageView
+            android:layout_width="186dp"
+            android:layout_height="174dp"
+            android:id="@+id/teamFourPic"
+            android:layout_below="@+id/teamThreePic"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:src="@drawable/cypresshillcrop"
+            android:contentDescription="@string/teamFourLogo" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="174dp"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:id="@+id/teamFourDescript"
+            android:layout_toLeftOf="@+id/teamFourSelect"
+            android:layout_toEndOf="@+id/teamFourPic"
+            android:layout_toRightOf="@+id/teamFourPic"
+            android:layout_alignParentBottom="true"
+            android:layout_below="@+id/teamThreePic" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="174dp"
+            android:text="@string/ButtonSelectScreenPick"
+            android:id="@+id/teamFourSelect"
+            android:focusableInTouchMode="false"
+            android:layout_below="@+id/teamThreeSlect"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:onClick="editTeamsActivityTeam4"
+            />
+
+        <Button
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Make New Team"
+            android:id="@+id/newTeam"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="false"/>
+
+    </RelativeLayout>
+    </ScrollView>
+
 </RelativeLayout>
